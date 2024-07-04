@@ -147,25 +147,3 @@ int main()
 		std::cout << "\n\n";
 	}
 }
-
-// int main()
-// {
-// 	Animal	Animal1("Hyena");
-// 	Dog 	Buster;
-// 	Cat		Ashley;
-
-// 	std::cout << "\n\n";
-
-// 	Buster.makeSound();
-// 	Ashley.makeSound();
-
-// 	std::cout << "\n\n";
-
-// 	std::cout << "I am Animal1 and my type is " << Animal1.getType() << std::endl;
-// 	std::cout << "I am Buster and my type is " << Buster.getType() << std::endl;
-// 	std::cout << "I am Ashley and my type is " << Ashley.getType() << std::endl;
-
-// 	std::cout << "\n\n";
-
-// 	return (0);
-// }

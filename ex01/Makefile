@@ -1,7 +1,7 @@
 NAME = ex00.out
 CXX = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -std=c++98
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp ShallowCat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

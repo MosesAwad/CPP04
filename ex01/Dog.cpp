@@ -12,6 +12,23 @@ Dog::~Dog()
 	std::cout << "Dog destructor called" << std::endl;
 }
 
+Dog::Dog(const Dog& other) : Animal(other), brain(new Brain())
+{
+	*this = other;
+}
+
+Dog& Dog::operator=(const Dog& other)
+{
+	if (this != &other)
+	{
+		this->Animal::operator=(other);
+		Brain* newBrain = new Brain(*other.brain); // Deep copy using the copy constructor of the Brain() class
+		delete (this->brain);
+		this->brain = newBrain;
+	}
+	return (*this);
+}
+
 void	Dog::makeSound() const
 {
 	std::cout << "Woof woof" << std::endl;

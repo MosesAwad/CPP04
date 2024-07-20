@@ -18,24 +18,26 @@
 	that have been overridden! So if the Cat class has a unique
 	function called doPurring(), a const Animal* cat = new Cat()
 	would NOT be able to call cat.doPurring().
+
 	In addition to that, if we have a function that is available
-	in the base class but we want it to reuse it do different things
+	in the base class but we want to reuse it to do different things
 	in derived classes, like the function makeSound(), then we have
 	to override this function. The way to do so is to use the 'virtual' 
 	keyword in the class defintion of the Animal class before the
 	function makeSound(). If we do not do so, then the compiler would
-	always assume you want the default makeSound function of the Animal
-	base class. That is because a redefined function like makeSound is
+	always assume you want the default makeSound() function of the Animal
+	base class. That is because a redefined function like makeSound() is
 	bound at compile time. It is set in stone, its binding is static.
+
 	So since our pointer is of type Animal when we say something like
 	const Animal* cat =  new Cat(); then the compiler is to going to
-	choose the Animal's definition of that function at COMPILE TIME. When
-	we bypass that issue via the virtual keyword, the type of binding
-	changes from static to dynamic and so, the decision as to which
-	makeSound() function to use is now made at RUN TIME. So basically, 
-	hen a function is declared as virtual in a base class, C++ uses a 
-	virtual table (vtable) to determine which function to call at runtime,
-	allowing the derived class's implementation to be executed.
+	choose the Animal's definition of that function at COMPILE TIME. So by
+	using the virtual keyword, the type of binding changes from static to
+	dynamic and so, the decision as to which makeSound() function to use 
+	is now made at RUN TIME. So basically, when a function is declared as
+	virtual in a base class, C++ uses a virtual table (vtable) to determine
+	which function to call at runtime, allowing the derived class's 
+	implementation to be executed.
 
 	NOTE: This also applies to the destructors! If you do not use the virtual
 	keyword with the destructor of Animal, it will always call the Animal's
